@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 13:11:17 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 14:06:25 by ede-cola         ###   ########.fr       */
+/*   Created: 2023/11/03 13:43:32 by ede-cola          #+#    #+#             */
+/*   Updated: 2023/11/03 14:11:59 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n)
+	if (little[i] == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (&((void *)s)[i]);
+		j = 0;
+		if (big[i] == little[j])
+		{
+			while (big[i + j] == little[j])
+			{
+				j++;
+				if (little[j] == '\0')
+					return (&((char *)big)[i]);
+			}
+		}
 		i++;
 	}
 	return (NULL);
