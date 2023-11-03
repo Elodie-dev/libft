@@ -6,13 +6,12 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:13:27 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 14:32:03 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:08:15 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 int	ft_atoi(const char *nptr)
 {

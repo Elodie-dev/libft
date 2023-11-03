@@ -6,12 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:30:06 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 13:41:20 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:11:53 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

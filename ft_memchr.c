@@ -6,12 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:11:17 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 14:06:25 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:11:02 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
