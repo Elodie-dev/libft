@@ -6,12 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:35:03 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 16:58:00 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:12:43 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

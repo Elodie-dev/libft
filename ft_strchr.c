@@ -6,11 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:33:01 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 12:15:24 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:13:12 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

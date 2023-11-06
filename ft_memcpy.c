@@ -6,11 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:17:41 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/02 14:40:48 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:12:59 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 17:56:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:25 by ede-cola         ###   ########.fr       */
+/*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
+/*   Updated: 2023/11/06 12:13:08 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char    **ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	if (i < size)
-	{
-		while (j < size - i)
-		{
-			dest[i] = src[j];
-			i++;
-			j++;
-		}
-	}
-	dest[i] = '\0';
-	return (i + j + 2);
+    
 }

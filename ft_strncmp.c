@@ -6,12 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:11:38 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 13:10:21 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:13:36 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:44:01 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 16:19:11 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:13:32 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

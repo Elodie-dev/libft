@@ -6,11 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:23:03 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/02 14:41:04 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:13:05 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

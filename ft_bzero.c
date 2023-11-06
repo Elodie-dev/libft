@@ -6,11 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:40:32 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/02 14:39:40 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:12:38 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

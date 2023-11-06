@@ -6,12 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:43:32 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/03 14:11:59 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:13:40 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
