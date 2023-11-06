@@ -6,13 +6,11 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:06:15 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:20 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:10:02 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(char const *s);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
