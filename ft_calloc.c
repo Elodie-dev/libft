@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:35:03 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:12:43 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:13:46 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	ret = malloc(nmemb * size);
 	if (ret == NULL)
-		return (0);
+		return (NULL);
 	return (ret);
 }

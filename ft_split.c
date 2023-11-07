@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 10:57:37 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:55:19 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,39 @@ int	ft_countword(char const *s, char c)
 	return (count);
 }
 
-int	*ft_countwordsize(int count, char const *s, char c)
+void	*ft_setmem(int count, char *type, int val)
+{
+	void	*ret;
+	char	*comp1;
+	char	*comp2;
+	char	*comp3;
+
+	comp1 = "char **";
+	comp2 = "char *";
+	comp3 = "int";
+	if (type == comp1)
+		ret = malloc(sizeof(char *) * (count + 1));
+	else if (type == comp2)
+		ret = malloc((sizeof(char) * val) + 1);
+	else if (type == comp3)
+		ret = malloc(sizeof(int) * count);
+	else
+		ret = NULL;
+	if (ret == NULL)
+	{
+		free(ret);
+		return (NULL);
+	}
+	return (ret);
+}
+
+int	*ft_countwordsize(int count, char const *s, char c, int i)
 {
 	int	size;
 	int	*ret;
-	int	i;
 
 	size = 0;
-	i = 0;
-	ret = malloc(sizeof(int) * count);
-	if (ret == NULL)
-		return (0);
+	ret = ft_setmem(count, "int", 0);
 	while (*s)
 	{
 		if (*s == c || *(s + 1) == '\0')
@@ -45,8 +67,8 @@ int	*ft_countwordsize(int count, char const *s, char c)
 				ret[i] = size + 1;
 			else
 				ret[i] = size;
-            size = 0;
-            i++;
+			size = 0;
+			i++;
 		}
 		else
 			size++;
@@ -55,46 +77,33 @@ int	*ft_countwordsize(int count, char const *s, char c)
 	return (ret);
 }
 
-char	**ft_setmem(int count)
-{
-	char	**ret;
-
-	ret = malloc(sizeof(char *) * (count + 1));
-	if (ret == NULL)
-		return (0);
-	return (ret);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	// int		j;
+	int		j;
 	int		count;
-    int     *val;
+	int		*val;
 	char	**ret;
 
 	i = 0;
 	count = ft_countword(s, c);
-    val = ft_countwordsize(count, s, c);
-	ret = ft_setmem(count);
+	val = ft_countwordsize(count, s, c, i);
+	ret = ft_setmem(count, "char **", 0);
 	while (i < count)
 	{
-		// j = 0;
-		*ret = malloc((sizeof(char) * val[i]) + 1);
+		j = 0;
+		ret[i] = ft_setmem(count, "char *", val[i]);
 		while (*s != c && *s != '\0')
 		{
-			**ret = *s;
-			// j++;
+			ret[i][j] = *s;
+			j++;
 			s++;
-            *ret++;
 		}
-		**ret = '\0';
+		ret[i][j] = '\0';
 		i++;
 		s++;
-        ret++;
 	}
-	*ret = NULL;
-    free (val);
+	ret[i] = NULL;
 	return (ret);
 }
 
@@ -102,14 +111,16 @@ int	main(void)
 {
 	char const *s = "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC";
 	char c = ',';
-    char **str;
+	char **str;
 	int i;
 
 	i = 0;
-    str = ft_split(s, c);
+	str = ft_split(s, c);
 	while (str[i])
 	{
 		printf("%s\n", str[i]);
 		i++;
 	}
+	free(str);
+	return (0);
 }
