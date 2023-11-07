@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 13:55:19 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:02:35 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	*ft_setmem(int count, char *type, int val)
 		ret = malloc(sizeof(int) * count);
 	else
 		ret = NULL;
-	if (ret == NULL)
+	if (!ret)
 	{
 		free(ret);
 		return (NULL);
@@ -95,32 +95,13 @@ char	**ft_split(char const *s, char c)
 		ret[i] = ft_setmem(count, "char *", val[i]);
 		while (*s != c && *s != '\0')
 		{
-			ret[i][j] = *s;
-			j++;
-			s++;
+			ret[i][j++] = *s++;
 		}
 		ret[i][j] = '\0';
 		i++;
 		s++;
 	}
 	ret[i] = NULL;
+	free(val);
 	return (ret);
-}
-
-int	main(void)
-{
-	char const *s = "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC";
-	char c = ',';
-	char **str;
-	int i;
-
-	i = 0;
-	str = ft_split(s, c);
-	while (str[i])
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
-	free(str);
-	return (0);
 }
