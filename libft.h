@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:33:02 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 19:09:52 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:39:11 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);

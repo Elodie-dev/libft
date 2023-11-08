@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:43:32 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:40 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:51:22 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 		if (big[i] == little[j])
 		{
-			while (big[i + j] == little[j])
+			while (big[i + j] == little[j] && i + j < len)
 			{
 				j++;
 				if (little[j] == '\0')
