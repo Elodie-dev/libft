@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:56:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:25 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:37:22 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,25 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	while (dest[i])
-		i++;
-	if (i < size)
+	if (size == 0)
+		return (ft_strlen(dest));
+	else
 	{
-		while (j < size - i)
-		{
-			dest[i] = src[j];
+		while (i < size - 1)
 			i++;
-			j++;
+		if (dest[i] != '\0')
+			return (ft_strlen(dest) + size);
+		else
+		{
+			if (size > i + 1)
+			{
+				while (j < size - i)
+					dest[i++] = src[j++];
+				dest[i] = '\0';
+				return (ft_strlen(dest) + j);
+			}
+			else
+				return (ft_strlen(dest));
 		}
 	}
-	dest[i] = '\0';
-	return (i + j + 2);
 }

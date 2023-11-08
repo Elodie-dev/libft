@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:57:03 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:44 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:21:13 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		i++;
 	}
-	if (s[i] == '\0' && c == '\0')
+	if (s[i] == '\0' && (unsigned char)c == '\0')
 		return (&((char *)s)[i]);
 	else
 	{
 		while (i >= 0)
 		{
-			if (s[i] == c)
+			if (s[i] == (unsigned char)c)
 				return (&((char *)s)[i]);
 			i--;
 		}
