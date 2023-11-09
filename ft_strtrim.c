@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:41:20 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 12:12:42 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:56:09 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,43 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 
 	i = 0;
-	j = 0;
-	ret = malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set)) + 1);
-	if (ret == NULL)
+	ret = malloc((sizeof(char) * (ft_strlen(s1) - ft_strlen(set))) + 1);
+	if (!ret)
 		return (NULL);
 	while (*s1)
 	{
-		if (*s1 == set[j])
-			j++;
-		else
+		j = 0;
+		while (set[j])
 		{
-			ret[i] = *s1;
-			i++;
+			if (set[j] == *s1)
+			{
+				s1++;
+				j++;
+			}
+			j++;
 		}
+		ret[i] = *s1;
 		s1++;
+		i++;
 	}
 	ret[i] = '\0';
 	return (ret);
 }
+
+// int	main(void)
+// {
+// 	char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+// 	char *strtrim;
+
+// 	strtrim = ft_strtrim(s1, " ");
+// 	if (!strtrim)
+// 		printf("%s", "NULL");
+// 	else
+// 	{
+// 		if (strtrim == s1)
+// 			printf("%s", "\nA new string was not returned");
+// 		else
+// 			printf("%s", strtrim);
+// 	}
+// 	return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 15:10:13 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:03:45 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ void	*ft_setmem(int count, char *type, int val)
 	else
 		ret = NULL;
 	if (!ret)
-	{
-		free(ret);
 		return (NULL);
-	}
 	return (ret);
 }
 
@@ -63,7 +60,7 @@ int	*ft_countwordsize(int count, char const *s, char c, int i)
 	{
 		if (*s == c || *(s + 1) == '\0')
 		{
-			if (*(s + 1) == '\0')
+			if (*(s + 1) == '\0' && *s != c)
 				ret[i] = size + 1;
 			else
 				ret[i] = size;
@@ -102,4 +99,18 @@ char	**ft_split(char const *s, char c)
 	ret[i] = NULL;
 	free(val);
 	return (ret);
+}
+
+int	main(void)
+{
+	char	*tosplit = "          ";
+	char	**res = ft_split(tosplit, ' ');
+	int	i;
+	
+	i = 0;
+	while(res[i])
+	{
+		printf("%s", res[i]);
+		i ++;
+	}
 }

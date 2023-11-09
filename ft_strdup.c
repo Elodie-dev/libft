@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:47:09 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/07 11:28:30 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:31:03 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 	while (s[i])
 		i++;
 	ret = malloc((i * sizeof(char)) + 1);
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	i = 0;
 	while (s[i])
