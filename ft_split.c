@@ -6,13 +6,13 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/09 13:03:45 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:51:02 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countword(char const *s, char c)
+static int	ft_countword(char const *s, char c)
 {
 	int	count;
 
@@ -26,7 +26,7 @@ int	ft_countword(char const *s, char c)
 	return (count);
 }
 
-void	*ft_setmem(int count, char *type, int val)
+static void	*ft_setmem(int count, char *type, int val)
 {
 	void	*ret;
 	char	*comp1;
@@ -49,7 +49,7 @@ void	*ft_setmem(int count, char *type, int val)
 	return (ret);
 }
 
-int	*ft_countwordsize(int count, char const *s, char c, int i)
+static int	*ft_countwordsize(int count, char const *s, char c, int i)
 {
 	int	size;
 	int	*ret;
