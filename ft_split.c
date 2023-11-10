@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/09 17:51:02 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:53:16 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,16 +101,16 @@ char	**ft_split(char const *s, char c)
 	return (ret);
 }
 
-int	main(void)
-{
-	char	*tosplit = "          ";
-	char	**res = ft_split(tosplit, ' ');
-	int	i;
+// int	main(void)
+// {
+// 	char	*tosplit = "          ";
+// 	char	**res = ft_split(tosplit, ' ');
+// 	int	i;
 	
-	i = 0;
-	while(res[i])
-	{
-		printf("%s", res[i]);
-		i ++;
-	}
-}
+// 	i = 0;
+// 	while(res[i])
+// 	{
+// 		printf("%s", res[i]);
+// 		i ++;
+// 	}
+// }
