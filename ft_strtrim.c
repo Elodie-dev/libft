@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:41:20 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/10 17:27:03 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:13:08 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static int	ft_isset(char const *set, char c)
 	return (0);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	end;
 	size_t	start;
 	char	*ret;
-	
+
 	i = 0;
 	start = 0;
 	if (!s1)
@@ -50,17 +50,3 @@ char    *ft_strtrim(char const *s1, char const *set)
 	ret[i] = '\0';
 	return (ret);
 }
-
-// int main(void)
-// {
-//   char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-//   char *strtrim = ft_strtrim(s1, " ");
-  
-//   if (!strtrim)
-//     printf("%s", "NULL");
-//   else if (strtrim == s1)
-//     printf("%s", "\nA new string was not returned");
-//   else
-//     printf("%s", strtrim);
-//   return (0);
-// }

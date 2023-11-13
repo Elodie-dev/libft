@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:30:54 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/10 13:53:16 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:26:50 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,98 +19,74 @@ static int	ft_countword(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s == c || *(s + 1) == '\0')
+		if (*s != c)
+		{
 			count++;
-		s++;
+			while (*s && *s != c)
+				s++;
+		}
+		else if (*s == c)
+			s++;
 	}
 	return (count);
 }
 
-static void	*ft_setmem(int count, char *type, int val)
+static int	ft_countwordsize(char const *s, char c)
 {
-	void	*ret;
-	char	*comp1;
-	char	*comp2;
-	char	*comp3;
-
-	comp1 = "char **";
-	comp2 = "char *";
-	comp3 = "int";
-	if (type == comp1)
-		ret = malloc(sizeof(char *) * (count + 1));
-	else if (type == comp2)
-		ret = malloc((sizeof(char) * val) + 1);
-	else if (type == comp3)
-		ret = malloc(sizeof(int) * count);
-	else
-		ret = NULL;
-	if (!ret)
-		return (NULL);
-	return (ret);
-}
-
-static int	*ft_countwordsize(int count, char const *s, char c, int i)
-{
-	int	size;
-	int	*ret;
-
-	size = 0;
-	ret = ft_setmem(count, "int", 0);
-	while (*s)
-	{
-		if (*s == c || *(s + 1) == '\0')
-		{
-			if (*(s + 1) == '\0' && *s != c)
-				ret[i] = size + 1;
-			else
-				ret[i] = size;
-			size = 0;
-			i++;
-		}
-		else
-			size++;
-		s++;
-	}
-	return (ret);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		i;
-	int		j;
-	int		count;
-	int		*val;
-	char	**ret;
+	int	i;
 
 	i = 0;
-	count = ft_countword(s, c);
-	val = ft_countwordsize(count, s, c, i);
-	ret = ft_setmem(count, "char **", 0);
-	while (i < count)
-	{
-		j = 0;
-		ret[i] = ft_setmem(count, "char *", val[i]);
-		while (*s != c && *s != '\0')
-			ret[i][j++] = *s++;
-		ret[i][j] = '\0';
+	while (s[i] && s[i] != c)
 		i++;
-		s++;
-	}
-	ret[i] = NULL;
-	free(val);
-	return (ret);
+	return (i);
 }
 
-// int	main(void)
-// {
-// 	char	*tosplit = "          ";
-// 	char	**res = ft_split(tosplit, ' ');
-// 	int	i;
-	
-// 	i = 0;
-// 	while(res[i])
-// 	{
-// 		printf("%s", res[i]);
-// 		i ++;
-// 	}
-// }
+static void	ft_free(size_t i, char **split)
+{
+	while (i > 0)
+	{
+		i--;
+		free(split[i]);
+	}
+	free(split);
+}
+
+static char	**ft_setsplit(char const *s, char c, char **split, size_t count)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < count)
+	{
+		while (s[j] && s[j] == c)
+			j++;
+		split[i] = ft_substr(s, j, ft_countwordsize(&s[j], c));
+		if (!split[i])
+		{
+			ft_free(i, split);
+			return (NULL);
+		}
+		while (s[j] && s[j] != c)
+			j++;
+		i++;
+	}
+	split[i] = NULL;
+	return (split);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**ret;
+	size_t	count;
+
+	if (!s)
+		return (NULL);
+	count = ft_countword(s, c);
+	ret = malloc(sizeof(char *) * (count + 1));
+	if (!ret)
+		return (NULL);
+	ret = ft_setsplit(s, c, ret, count);
+	return (ret);
+}
