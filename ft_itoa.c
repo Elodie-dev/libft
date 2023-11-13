@@ -6,7 +6,7 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:47:38 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/13 13:26:48 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:21:36 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ char	*ft_itoa(int n)
 	len = ft_nbr_length(n);
 	nb = n;
 	ret = malloc(sizeof(char) * (len + 1));
-    if (!ret)
-        return (NULL);
-    ret[len] = '\0';
+	if (!ret)
+		return (NULL);
+	ret[len] = '\0';
 	if (nb < 0)
 	{
 		i = 1;
 		nb = -nb;
-        ret[0] = '-';
+		ret[0] = '-';
 	}
 	else
 		i = 0;
