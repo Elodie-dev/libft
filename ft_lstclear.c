@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 12:38:30 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/14 14:48:34 by ede-cola         ###   ########.fr       */
+/*   Created: 2023/11/14 13:52:28 by ede-cola          #+#    #+#             */
+/*   Updated: 2023/11/14 14:46:17 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list  *temp;
-    
-    if (!*lst)
-        *lst = new;
-    else
-    {
-        temp = *lst;
-        while (temp->next)
-        {
-            temp = temp->next;
-        }
-        temp->next = new;
-    }
+	t_list *temp;
+	t_list *next;
+
+	if (!lst || !del)
+		return ;
+	temp = *lst;
+	while (temp)
+	{
+		next = temp->next;
+		ft_lstdelone(temp, del);
+		temp = next;
+	}
+	*lst = NULL;
 }
