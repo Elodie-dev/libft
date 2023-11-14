@@ -23,9 +23,6 @@ $(NAME): $(OBJS)
 bonus: $(OBJS_B)
 	ar rc $(NAME) $(OBJS_B)
 	ranlib $(NAME)
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_B)
 
 clean:
 	rm -f $(OBJS) $(OBJS_B)
