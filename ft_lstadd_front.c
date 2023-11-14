@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 11:41:13 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/14 10:31:14 by ede-cola         ###   ########.fr       */
+/*   Created: 2023/11/14 10:19:21 by ede-cola          #+#    #+#             */
+/*   Updated: 2023/11/14 10:41:32 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+    if (lst && new)
+    {
+        new->next = *lst;
+        *lst = new;
+    }
 }
