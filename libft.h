@@ -6,19 +6,34 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:33:02 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/14 15:19:24 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:45:12 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
 
-/**************************** PART I & II *************************************/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+# ifndef MAX_OPEN_FILES
+#  define MAX_OPEN_FILES 1024
+# endif
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
@@ -54,13 +69,24 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
-/******************************* BONUS *************************************/
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+int					ft_printf(const char *format, ...);
+void				ft_putnbr16(unsigned long long n, char format);
+void				ft_putnbr_unsigned(unsigned long long n);
+size_t				ft_nbr_length(int n);
+size_t				ft_unsigned_length(unsigned long long n, int base);
+size_t				ft_strlen_printf(const char *s);
+int					ft_deal_cformat(char c);
+int					ft_deal_sformat(char *str);
+int					ft_deal_pformat(uintptr_t ptr);
+int					ft_deal_iformat(int nb);
+int					ft_deal_uformat(unsigned int nb);
+int					ft_deal_xformat(unsigned int nb, char format);
+char				*get_next_line(int fd);
+char				*ft_join_to_nl(char *s1, char *s2);
+char				*ft_strjoin_gnl(char *s1, char *s2);
+char				*ft_check_str(char *str);
+size_t				ft_strlen_gnl(char *str);
+char				*ft_strndup(char *s, size_t n);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);

@@ -6,13 +6,13 @@
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:47:38 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/13 14:21:36 by ede-cola         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:58:39 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nbr_length(int n)
+static int	ft_nbr_length_itoa(int n)
 {
 	int	count;
 
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	int		i;
 	int		len;
 
-	len = ft_nbr_length(n);
+	len = ft_nbr_length_itoa(n);
 	nb = n;
 	ret = malloc(sizeof(char) * (len + 1));
 	if (!ret)

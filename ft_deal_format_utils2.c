@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_deal_format_utils2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-cola <ede-cola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 13:11:17 by ede-cola          #+#    #+#             */
-/*   Updated: 2023/11/27 14:04:16 by ede-cola         ###   ########.fr       */
+/*   Created: 2023/11/25 18:52:04 by ede-cola          #+#    #+#             */
+/*   Updated: 2023/12/15 15:41:59 by ede-cola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_deal_xformat(unsigned int nb, char format)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return ((void *)(s + i));
-		i++;
-	}
-	return (NULL);
+	ft_putnbr16(nb, format);
+	return (ft_unsigned_length(nb, 16));
 }
